@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOJO HOOKAH - Premium Tobacco Menu 2025</title>
+    <style>
+        :root {
+            --color-green: #2ecc71;
+            --color-blue: #3498db;
+            --color-orange: #e67e22;
+            --color-bg-dark: #1a1a1a;
+            --color-bg-card: #2d2d2d;
+            --color-text: #ffffff;
+            --color-text-secondary: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            color: var(--color-text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            background: #000000;
+            border-radius: 0;
+            border: none;
+            position: relative;
+        }
+
+
+
+        h1 {
+            font-size: 4em;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 0;
+            position: relative;
+        }
+
+        .subtitle {
+            display: none;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border-left: 5px solid var(--color-green);
+        }
+
+        .section-header.blue {
+            border-left-color: var(--color-blue);
+        }
+
+        .section-header.orange {
+            border-left-color: var(--color-orange);
+        }
+
+        .section-header h2 {
+            font-size: 2em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-header.green h2 {
+            color: var(--color-green);
+        }
+
+        .section-header.blue h2 {
+            color: var(--color-blue);
+        }
+
+        .section-header.orange h2 {
+            color: var(--color-orange);
+        }
+
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .flavor-card {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .flavor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--color-green);
+        }
+
+        .flavor-card.blue::before {
+            background: var(--color-blue);
+        }
+
+        .flavor-card.orange::before {
+            background: var(--color-orange);
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .flavor-card.green:hover {
+            border-color: var(--color-green);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+        }
+
+        .flavor-card.blue:hover {
+            border-color: var(--color-blue);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .flavor-card.orange:hover {
+            border-color: var(--color-orange);
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.3);
+        }
+
+        .flavor-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--color-text);
+        }
+
+        .flavor-card.green .flavor-name {
+            color: var(--color-green);
+        }
+
+        .flavor-card.blue .flavor-name {
+            color: var(--color-blue);
+        }
+
+        .flavor-card.orange .flavor-name {
+            color: var(--color-orange);
+        }
+
+        .flavor-description {
+            font-size: 0.9em;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-top: 8px;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 4px;
+            }
+
+            .section-header h2 {
+                font-size: 1.5em;
+            }
+
+            .flavor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flavor-description {
+                font-size: 0.85em;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--color-text-secondary);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="mojo.jpg" alt="Альтернативный текст" width="350" height="350">
+
+            
+            <h2>Hookah menu</h2>
+        </header>
+
+        <main id="menu-content">
+            <!-- Content will be generated by JavaScript -->
+        </main>
+
+        <footer>
+            <p>MOJO HOOKAH - Premium Tobacco Collection 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuData = {
+            green_row: [
+                { name: "Dark mint", description: "Темная мята; сладкий, глубокий и насыщенный аромат с яркой ментоловой окраской" },
+                { name: "Dark side cola", description: "Кола лимон; бодрящий освежающий вкус колы с долькой лимона" },
+                { name: "Bergamonstr", description: "Бергамот; пряный и слегка терпкий вкус спелого бергамота с нотами чая" },
+                { name: "Darkside Red zeppelin", description: "Крыжовник; кисло-сладкие и терпкие ягоды красного крыжовника с травянистыми нотками" },
+                { name: "Crystal Grape", description: "Белый виноград; сладкий, слегка освежающий аромат спелого белого винограда" },
+                { name: "Fruity dust", description: "Экзотические фрукты; сложный аромат сочных экзотических фруктов с преобладанием питахайи (драконьего фрукта)" },
+                { name: "Red alert", description: "Арбуз и дыня; сочная мякоть арбуза с нотками медовой дыни в освежающем безалкогольном напитке" },
+                { name: "Tropic Ray", description: "Тропический коктейль; карибский коктейль Пина Колада из кокоса, ананаса и рома" },
+                { name: "Wildberry", description: "Ягодный микс; глубокий душистый аромат свежесобранных лесных ягод (малина, ежевика, черника, клубника)" },
+                { name: "Waffle shuffle", description: "Вафли; аромат хрустящих лимонных вафель со сливочным оттенком" },
+                { name: "Pear", description: "Груша; насыщенный аромат сладкого грушевого лимонада, напоминает Дюшес" },
+                { name: "Darksupra", description: "Вкус традиционного японского зеленого чая Сенча с нотками жасмина" },
+                { name: "Green beam", description: "Фейхоа; богатый аромат экзотической зеленой ягоды фейхоа с красочной палитрой оттенков (киви, клубника, земляника, ананас, банан)" },
+                { name: "Falling star", description: "Манго-маракуйя; вкус сладкого манго с освежающей маракуйей в тропическом коктейле" },
+                { name: "Grape Core", description: "Черный виноград; универсальный, сочный и естественный моновкус красного винограда, терпкий с кислинкой" },
+                { name: "Mary Jane 2.0", description: "Травянистый вкус; яркий травянистый аромат с насыщенными многогранными оттенками" },
+                { name: "Desert Eagle", description: "Кактус; сладкий аромат кактуса с терпким послевкусием" },
+                { name: "Basil blast", description: "Базилик; свежий вкус душистого зеленого базилика, освежающий и травянистый" },
+                { name: "Barvy citrus", description: "Цитрусовый микс; микс различных цитрусовых фруктов" },
+                { name: "Rivers of blood", description: "Насыщенный, остро-овощной вкус коктейля Кровавая Мэри с кисло-сладкими нотками, пряным послевкусием и освежающим ароматом" },
+                { name: "Torpedo", description: "Арбуз и дыня; сладкий, но освежающий классический аромат спелой дыни и арбуза" },
+                { name: "Top gun", description: "Вкус сладкой жевательной резинки со вкусами клубники и арбуза, с легким послевкусием дыни" },
+                { name: "Astro tea", description: "Чай с лимоном; ароматный чай с цитрусовыми нотками" },
+                { name: "Red berry", description: "Красная смородина; ягодный вкус красной смородины" },
+                { name: "Deep blue sea", description: "Вкус сахарного печенья со сливочными нотками и легким оттенком кокоса" },
+                { name: "Starlime", description: "Лайм; освежающий вкус лайма" },
+                { name: "Gonzo cake", description: "Чизкейк; десертный вкус чизкейка" },
+                { name: "Bassberry", description: "Вкус и аромат бузины с кисло-сладкими ягодными нотками и легким цветочным оттенком" },
+                { name: "Pepper blast", description: "Вкус красного перца" },
+                { name: "Sweet comet", description: "Влюква и банан; сладкий микс клюквы с бананом" }
+            ],
+            blue_row: [
+                { name: "Lemon blast", description: "Лимон; освежающий яркий вкус лимона" },
+                { name: "Honey dust", description: "Вкус натурального цветочного меда с приятными терпкими нотками" },
+                { name: "Bounty hunter", description: "Ледяной кокос; сочетание кокоса и шоколада с холодком" },
+                { name: "Bananapapa", description: "Банан; сладкий натуральный вкус банана" },
+                { name: "Wild forest", description: "Земляника лесные ягоды; ярко выраженный земляничный вкус с нотами лесных ягод" },
+                { name: "Space Dessert", description: "Тирамису; десертный вкус итальянского тирамису" },
+                { name: "Darkside cookie", description: "Шоколадное печенье с бананом; десертный вкус печенья" },
+                { name: "Polar cream", description: "Фисташковое мороженое; мороженое с фисташковым вкусом" },
+                { name: "Raf in the jungle", description: "Вкус, имитирующий кофейный напиток Раф: сливочно-шоколадный кофе с нотками апельсиновой цедры" },
+                { name: "Eclipse", description: "Цитрусовые леденцы и мед; сладкий микс с медовыми нотками" },
+                { name: "Space jam", description: "Земляничный джем; сладкий ягодный джем" },
+                { name: "Code cherry", description: "Вишня; насыщенный вишневый вкус" },
+                { name: "Ice granny", description: "Ледяное яблоко; холодное зеленое яблоко" },
+                { name: "Barvy orange", description: "Апельсин; яркий цитрусовый вкус апельсина" },
+                { name: "Pomelow", description: "Помело; цитрусовый вкус помело" },
+                { name: "Black Currant", description: "Черная смородина; терпкий вкус черной смородины" },
+                { name: "Cosmos", description: "Коктейль космополитен; алкогольный коктейль" },
+                { name: "Spicy Pear", description: "Груша со специями; пряная груша" },
+                { name: "Glitch ice tea", description: "Персиковый чай; холодный чай со вкусом персика" }
+            ],
+            orange_red_row: [
+                { name: "Nord berry", description: "Клюквенный вкус, освежающий, кисло-сладкий с ягодной терпкостью" },
+                { name: "Breaking red", description: "Вкус терпкого, сладкого граната с легкой кислинкой и освежающим послевкусием, напоминающим сок и корочку фрукта" },
+                { name: "Mango lassi 2.0", description: "Манго; сладкий индийский напиток с манго" },
+                { name: "Red rush", description: "Вкус сладких барбарисовых леденцов" },
+                { name: "Virgin peach", description: "Персик; приятный, насыщенный вкус спелого персика" },
+                { name: "Needls", description: "Ёлка; хвойный вкус" },
+                { name: "Goal", description: "Вкус энергетика с черникой, сочетает сладкие нотки черники с бодрящими и освежающими нотками энергетического напитка" },
+                { name: "Kalee grapefruit 2.0", description: "Грейпфрут; цитрусовый вкус грейпфрута" },
+                { name: "Red tea", description: "Красный чай; насыщенный чай каркаде с цветочными и фруктовыми нотами" },
+                { name: "Black berry", description: "Ежевика; сладкая ягода ежевики" },
+                { name: "Bloody orange", description: "Кровавый апельсин; насыщенный цитрусовый вкус" },
+                { name: "Sambuka shot", description: "Самбука; алкогольный напиток с анисом" },
+                { name: "Salbey", description: "Шалфей; травянистый вкус шалфея" },
+                { name: "Fruitt allity", description: "Сладкие жевательные конфеты с нотками лесных ягод" },
+                { name: "Generis raspberry", description: "Малина; яркий малиновый вкус" },
+                { name: "Cherry rocks", description: "Насыщенный вкус вишневых леденцов с ярким кислым послевкусием" },
+                { name: "Nuts", description: "Орех; ореховый вкус" },
+                { name: "Pineapple pulse", description: "Ананас; тропический вкус ананаса" },
+                { name: "Super nova", description: "Холодок; прохладные ноты, освежающий эффект" },
+                { name: "Cyber kiwi", description: "Киви; кисло-сладкий вкус киви" },
+                { name: "Cosmo flower", description: "Цветочный; цветочные ароматы" },
+                { name: "Dark passion", description: "Вкус кисло-сладкой маракуйи с терпкими нотками" },
+                { name: "Dark ice cream", description: "Шоколадное мороженое; десертный вкус мороженого" },
+                { name: "Cinna moon", description: "Булочка с корицей; десертный вкус выпечки со специями" }
+            ]
+        };
+
+        function createFlavorCard(flavor, colorClass) {
+            return `
+                <div class="flavor-card ${colorClass}">
+                    <div class="flavor-name">${flavor.name}</div>
+                    <div class="flavor-description">${flavor.description}</div>
+                </div>
+            `;
+        }
+
+        function renderMenu() {
+            const menuContent = document.getElementById('menu-content');
+            
+            const sections = [
+                { title: 'BASE', data: menuData.green_row, color: 'green' },
+                { title: 'CORE', data: menuData.blue_row, color: 'blue' },
+                { title: 'RARE', data: menuData.orange_red_row, color: 'orange' }
+            ];
+
+            sections.forEach(section => {
+                const sectionHTML = `
+                    <div class="section">
+                        <div class="section-header ${section.color}">
+                            <h2>${section.title}</h2>
+                        </div>
+                        <div class="flavor-grid">
+                            ${section.data.map(flavor => createFlavorCard(flavor, section.color)).join('')}
+                        </div>
+                    </div>
+                `;
+                menuContent.innerHTML += sectionHTML;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMenu();
+        });
+    </script>
+</body>
+</html>
